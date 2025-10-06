@@ -9,7 +9,12 @@ def add_chocolate(shopping_list: list):
     Returns:
         - the same list, with the string "chocolate" added to the end
     """
-    pass
+    shopping_list.append("chocolate")
+    return shopping_list
+shopping_list = []
+print(add_chocolate(shopping_list))
+
+
 
 def lou_bega(lyrics_list: list):
     """This function accepts a list of strings and adds the words 
@@ -35,8 +40,51 @@ def lou_bega(lyrics_list: list):
             "A little bit of Erica by my side", 
             "A little bit of Rita's all I need"
         ]
-    """
-    pass
+ 
+       """
+    #option 1
+    # for i, lyric in enumerate(lyrics_list):
+    #     lyrics_list[i] = "A little bit of " + lyric 
+    # return lyrics_list
+    
+    #option 2
+    # new_list = [] # create empty list
+    # for lyric in lyrics_list: # loop item in lyrics list
+    #     lyric = "A little bit of " + lyric # existing lyric = "A little bit of + "
+    #     new_list.append(lyric)
+    # return new_list
+
+    # option 3 - for and return MUST be the same indentation!!!!!!!
+    new_list = []
+    for lyric in lyrics_list:
+        new_lyric = ("A little bit of " + lyric)
+        new_list.append(new_lyric)
+    return new_list 
+
+    # lyrics_list = [
+    #         "Monica in my life",  
+    #         "Erica by my side", 
+    #         "Rita's all I need"
+    #     ]
+    
+# for lyrics in lyrics_list:
+#  print(f"A little bit of {lyrics}")
+
+
+
+#     for each_lyrics in lyrics_list:
+#         print(string, each_lyrics)
+#     return lyrics_list
+
+# string="A little bit of "
+# result = lou_bega(string)
+# print(result)
+
+# string = "A little bit of"
+# lyrics_list = ["Monica in my life", "Erica by my side", "Rita's all I need"]
+# for lyrics in lyrics_list:
+#     print(string, lyrics)
+
 
 def assemble_guest_list():
     """This function repeatedly prompts the user for the name of a dinner guest.
@@ -49,7 +97,31 @@ def assemble_guest_list():
     Returns:
         - a list of strings supplied by the user
     """
-    pass
+    
+    guest_list = []
+    name = input("What is the dinner guest name?: ")
+    while name != "":
+        guest_list.append(name)
+        name = input("What is the dinner guest name?: ")
+    return guest_list
+
+    # while name == input("What is the dinner guest name?: "):
+    #    guest_list = guest_list.append(name)
+    #    name = input("What is the dinner guest name?: ")
+    # while name == "":
+    #     return guest_list
+    
+#Make an empty list called guest_list
+#Ask the user to type a guest name
+
+#While the user typed something (not blank):
+#    Add that name to guest_list
+#    Ask the user for another guest name
+
+#When the user presses Enter without typing anything:
+#    Stop asking
+#Return the guest_list
+
 
 def is_prime(some_number: int): # A bit trickier!
     """This function tests to see if the input is a prime number.
