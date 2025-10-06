@@ -142,3 +142,11 @@ def is_prime(some_number: int): # A bit trickier!
     # Hint: 
     #   int(1.5) == 1.0
 
+    if some_number < 2:
+        return False
+    if some_number ==2:
+        return True
+    for i in range (2, some_number): # range = between 2 and the number up to (not including some_number). Range does not include the endpoint.
+        if (some_number % i ==0): # if the number divides by any number starting from 2 but 1 less than the some_number and there is no remainder its not a prime number.
+            return False
+    return True
